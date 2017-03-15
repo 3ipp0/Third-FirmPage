@@ -1,0 +1,39 @@
+<h1>Pages#blog</h1>
+<p>Find me in app/views/pages/blog.html.erb</p>
+
+<% @posts.each do |post| %>
+		                        <li>
+		                            <div class="slide">
+										<div class="post post-normal">
+											<!-- FEATURED IMAGE -->
+											<div class="post-header">
+												<%= link_to post_path(post) do  %>
+												<center><%= image_tag post.photo.url(:medium) %></center>
+												<% end %>
+											</div>
+											<div class="post-content">
+												<!-- TITLE -->
+												<h3><%= post.title %></h3>
+												
+												<!-- DATE -->
+												<div class="post-data">
+													<p><span class="icon icon-clock"></span> <%= post.updated_at.strftime("%B, %d, %Y") %></p>
+												</div>
+												<!-- CONTENT -->
+												<p>
+												<% if post.body != nil %>
+												<% post_short = post.body.match(/^(\w|\s)?{55}/).to_s %>
+												<%= post_short %>...
+													<% else %>
+													<center><p>No description available!</p><BR>...<BR></center>
+												<% end %>
+													
+												</p>
+												<div class="center">
+													<%= link_to "Read more", post_path(post), :class => 'btn btn-default' %>
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+								<% end %>
