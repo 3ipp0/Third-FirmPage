@@ -5,6 +5,9 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem "rails-settings-cached"
+gem 'activeadmin_settings_cached'
+
 gem 'activeadmin', github: 'activeadmin'
 gem 'active_skin'
 
