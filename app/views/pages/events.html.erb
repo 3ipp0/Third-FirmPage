@@ -1,2 +1,14 @@
 <h1>Pages#events</h1>
 <p>Find me in app/views/pages/events.html.erb</p>
+
+<%= render 'few_days_meetings/index' %>
+
+<%= month_calendar partial: 'simple_calendar/month_calendar', events: @few_days_meetings do |date,meetings| %>
+<%= date %>
+<% meetings.each do |meeting| %>
+    <div>
+
+      <%= link_to "#{meeting.name}", meeting %>
+    </div>
+  <% end %>
+<% end %>

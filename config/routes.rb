@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :few_days_meetings
+  resources :meetings
   devise_for :models
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

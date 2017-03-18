@@ -1,0 +1,2 @@
+module FewDaysMeetingsHelper
+end

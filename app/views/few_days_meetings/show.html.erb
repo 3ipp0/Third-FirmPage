@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @few_days_meeting.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @few_days_meeting.description %>
+</p>
+
+<p>
+  <strong>Start time:</strong>
+  <%= @few_days_meeting.start_time %>
+</p>
+
+<p>
+  <strong>End time:</strong>
+  <%= @few_days_meeting.end_time %>
+</p>
+
+<%= link_to 'Apply for an Event', apply_event(@few_days_meeting) %> |
+<BR>
+<%= link_to 'Edit', edit_few_days_meeting_path(@few_days_meeting) %> |
+<%= link_to 'Back', few_days_meetings_path %>

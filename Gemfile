@@ -5,6 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem "simple_calendar"
+
 gem "rails-settings-cached"
 gem 'activeadmin_settings_cached'
 
