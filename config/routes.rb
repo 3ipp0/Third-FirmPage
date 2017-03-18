@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get 'vacansy' => 'pages#vacansy' , as: 'vacansy'
   get 'events' => 'pages#events' , as: 'events'
   get 'blog' => 'pages#blog' , as: 'blog'
+  get 'apply_event' => 'few_days_meetings#apply' , as: 'apply_event'
 
   resources :posts
 
