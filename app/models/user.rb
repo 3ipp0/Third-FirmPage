@@ -1,6 +1,12 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
+	has_attached_file :resume
+	validates_attachment_content_type :resume, :content_type => ["application/pdf","application/msword",
+            "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+            "text/plain"], :message => 'File must be document(doc,docx,pdf,txt) and less than 5MB'
+
+    validates_attachment_size :resume, :less_than => 5.megabytes
 	has_and_belongs_to_many :few_days_meetings
 
 

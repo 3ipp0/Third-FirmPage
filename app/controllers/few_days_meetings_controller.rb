@@ -9,9 +9,10 @@ class FewDaysMeetingsController < InheritedResources::Base
 
     def follow
     	@few_days_meeting = FewDaysMeeting.find(params[:id])
+        @user = current_user
         current_user.follow_few_days_meeting!(@few_days_meeting)
         respond_to do |format|
-            format.html {redirect_to @few_days_meeting}
+            format.html {render 'follow_form'}
             format.js
         end
     end
