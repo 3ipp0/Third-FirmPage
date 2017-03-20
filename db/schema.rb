@@ -46,6 +46,13 @@ ActiveRecord::Schema.define(version: 20170320193555) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  create_table "few_days_meeting_users", id: false, force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "few_days_meeting_id"
+    t.index ["few_days_meeting_id"], name: "index_few_days_meeting_users_on_few_days_meeting_id", using: :btree
+    t.index ["user_id"], name: "index_few_days_meeting_users_on_user_id", using: :btree
+  end
+
   create_table "few_days_meetings", force: :cascade do |t|
     t.string   "name"
     t.datetime "start_time"
@@ -119,13 +126,6 @@ ActiveRecord::Schema.define(version: 20170320193555) do
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true, using: :btree
-  end
-
-  create_table "users_events", id: false, force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "few_days_meeting_id"
-    t.index ["few_days_meeting_id"], name: "index_users_events_on_few_days_meeting_id", using: :btree
-    t.index ["user_id"], name: "index_users_events_on_user_id", using: :btree
   end
 
 end
