@@ -7,8 +7,13 @@ class FewDaysMeetingsController < InheritedResources::Base
     	@few_days_meeting = FewDaysMeeting.find(params[:id])
     end
 
-    def apply(event_id)
-    	
+    def follow
+    	@few_days_meeting = FewDaysMeeting.find(params[:id])
+        current_user.follow_few_days_meeting!(@few_days_meeting)
+        respond_to do |format|
+            format.html {redirect_to @few_days_meeting}
+            format.js
+        end
     end
 
   private
