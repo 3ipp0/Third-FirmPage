@@ -1,12 +1,14 @@
-<%= form_for @user, :url => root_path, html: {multipart: true}  do |f| %>
+<%= form_for @user, :url => update_path(@user), html: {multipart: true}  do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this @user from being saved:</h2>
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this User from being saved:</h2>
 
       <ul>
-      <% @user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+
+        <% @user.errors.full_messages.each do |msg| %>
+        <div class="alert alert-danger"><%= msg %></div>
+        <% end %>
+
       </ul>
     </div>
   <% end %>

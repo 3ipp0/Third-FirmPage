@@ -5,6 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'phony_rails'
+
 gem "simple_calendar"
 
 gem "rails-settings-cached"
