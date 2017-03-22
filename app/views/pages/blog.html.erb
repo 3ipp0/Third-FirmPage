@@ -1,39 +1,105 @@
-<h1>Pages#blog</h1>
-<p>Find me in app/views/pages/blog.html.erb</p>
+        <%= render 'parts/preloader' %> 
+        <%= render 'parts/header_top' %>
+        <%= render 'parts/header' %>
 
-<% @posts.each do |post| %>
-		                        <li>
-		                            <div class="slide">
-										<div class="post post-normal">
-											<!-- FEATURED IMAGE -->
-											<div class="post-header">
-												<%= link_to post_path(post) do  %>
-												<center><%= image_tag post.photo.url(:medium) %></center>
-												<% end %>
-											</div>
-											<div class="post-content">
-												<!-- TITLE -->
-												<h3><%= post.title %></h3>
-												
-												<!-- DATE -->
-												<div class="post-data">
-													<p><span class="icon icon-clock"></span> <%= post.updated_at.strftime("%B, %d, %Y") %></p>
-												</div>
-												<!-- CONTENT -->
-												<p>
-												<% if post.body != nil %>
-												<% post_short = post.body.match(/^(\w|\s)?{55}/).to_s %>
-												<%= post_short %>...
-													<% else %>
-													<center><p>No description available!</p><BR>...<BR></center>
-												<% end %>
-													
-												</p>
-												<div class="center">
-													<%= link_to "Read more", post_path(post), :class => 'btn btn-default' %>
-												</div>
-											</div>
-										</div>
-									</div>
-								</li>
-								<% end %>
+            <!-- START TITLE SECTION -->
+            <section class="section blog-title-section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="title-contnet">
+                                <h2>Blog</h2>
+                                <ol class="breadcrumb">
+                                  <li><%= link_to 'HOME', root_path %></li>
+                                  <li class="active">Blog</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- START BLOG CONTAINER SECTION -->
+            <section class="section blog-container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+
+                            <% @posts.each do |post| %>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="blog-item">
+                                        <div class="thumb">
+                                            <a href="#"><%= image_tag post.photo.url(:medium) %></a>
+                                            <div class="blog-meta">
+                                                <h2><%= post.updated_at.strftime("%d") %></h2>
+                                                <span><%= post.updated_at.strftime("%b") %></span>
+                                                <p><b>Views</b> 1510</p>
+                                            </div>
+                                            <div class="blog-contnet">
+                                                <h3><%= post.title %></h3>
+                                                <p><% if post.body != nil %>
+                                                    <% post_short = truncate(post.body, length: 150, separatot: ' ', omission: '...(continued)').to_s %>
+                                                    <%= post_short %>
+                                                   <% else %>
+                                                    <center><p>No description available!</p><BR>...<BR></center>
+                                                   <% end %></p>
+                                                <a <%= link_to "Read more", post_path(post), :class => 'pori-btn' %></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <% end %>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="blog-item">
+                                        <div class="thumb">
+                                            <a href="#"><img src="images/blog/blog4.jpg" class="img-responsive" width="825" height="383" alt=""></a>
+                                            <div class="blog-meta">
+                                                <h2>25</h2>
+                                                <span>Nov</span>
+                                                <p><b>Posted by</b> Dallilu, <b>In</b> blog category app, <b>Comments</b> 15, <b>Views</b> 1510</p>
+                                            </div>
+                                            <div class="blog-contnet">
+                                                <h3>Donec iaculis metus vitae ligula elementum</h3>
+                                                <p>Proin nulla dolor, porta id vestibulum nec, tempus id purus. In viverra commodo tellus, vitae iaculis dui rutrum eu. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer dictum volutpat massa, pulvinar feugiat libero euismod semper. Aenean placerat, ipsum in fringilla facilisis, arcu est vehicula ipsum, a dictum risus tellus mattis sem. Nunc id laoreet metus. Donec cursus augue urna, rhoncus ultrices ante feugiat eget nascetur ridiculus mus libero euismod semper.</p>
+                                                <a href="#" class="pori-btn">Read More</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- END OF /. BLOG ITME -->
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <nav>
+                                        <ul class="pagination">
+                                        <li>
+                                          <a href="#" aria-label="Previous">
+                                            <span aria-hidden="true">&laquo;</span>
+                                          </a>
+                                        </li>
+                                        <li><a href="#">1</a></li>
+                                        <li><a href="#">2</a></li>
+                                        <li class="active"><a href="#">3</a></li>
+                                        <li><a href="#">4</a></li>
+                                        <li><a href="#">5</a></li>
+                                        <li>
+                                          <a href="#" aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                          </a>
+                                        </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div><!-- END OF/. PAGINATION -->
+                        </div><!-- END OF BLOG CONTENT -->
+
+                    </div><!-- END OF /. ROW -->
+                </div><!-- END /. CONTAINER -->
+            </section><!-- END OF /. BLOG CONTAINRE -->
+
+<%= render 'parts/write_us' %>
+<%= render 'parts/footer' %>

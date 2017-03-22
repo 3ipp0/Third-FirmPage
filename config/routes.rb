@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   # map.resources :few_days_meetings, :member => {:follow => :post}
   get "apply_event/:id" => "few_days_meetings#follow", :as => :follow
   patch "confirmation/:id" => "users#update", :as => :update
+  
 
   resources :posts
 

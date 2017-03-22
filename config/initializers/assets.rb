@@ -9,3 +9,16 @@ Rails.application.config.assets.version = '1.0'
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )
+Rails.application.config.assets.precompile += %w( style.scss )
+
+Rails.application.config.assets.precompile += %w( jquery-1.11.2.min.js )
+Rails.application.config.assets.precompile += %w( bootstrap.min.js )
+Rails.application.config.assets.precompile += %w( jquery.appear.js )
+Rails.application.config.assets.precompile += %w( waypoints.min.js )
+Rails.application.config.assets.precompile += %w( jquery.counterup.min.js )
+Rails.application.config.assets.precompile += %w( isotope.pkgd.min.js )
+Rails.application.config.assets.precompile += %w( jquery.prettyPhoto.js )
+Rails.application.config.assets.precompile += %w( owl.carousel.min.js )
+Rails.application.config.assets.precompile += %w( wow.min.js )
+Rails.application.config.assets.precompile += %w( custom.js )
+

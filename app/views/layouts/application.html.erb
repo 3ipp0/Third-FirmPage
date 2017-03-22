@@ -1,14 +1,71 @@
 <!DOCTYPE html>
 <html>
   <head>
+  	<!-- SITE TITLE -->
     <title>Third</title>
-    <%= csrf_meta_tags %>
+    
+    <!-- META -->
+        <meta charset="UTF-8">
+        <meta name="author" content="author name" />
+        <meta name="description" content="Here goes description">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+        <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+
+        <!-- FAVICON -->
+        <link rel="icon" href="images/favicon/favicon.png">
+		<link rel="icon" href="images/favicon/favicon.png" sizes="57x57">
+		<link rel="icon" href="images/favicon/favicon.png" sizes="72x72">
+		<link rel="icon" href="images/favicon/favicon.png" sizes="114x114">
+		<link rel="icon" href="images/favicon/favicon.png" sizes="144x144">
+
+        <!-- STYLE -->
+        <%= stylesheet_link_tag 'style.css' %>
+
+
+        <!--[if lt IE 9]>
+            <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+            <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
+        <![endif]-->
   </head>
 
   <body>
-    <%= yield %>
+    <!-- START PRELOADER -->
+    
+        <!-- END OF PRELOADER -->
+        <div class="wrapper">
+          <% flash.each do |message_type, message| %>
+            <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+      	  <% end %>
+        	<%= yield %>
+
+        </div><!-- END OF /. WRAPPER -->
+
+    <!-- SCRIPTS -->
+      <!-- JQUERY LIBERY -->
+      <%= javascript_include_tag 'jquery-1.11.2.min.js'%>
+      <!-- BOOTSTRAP -->
+      <%= javascript_include_tag 'bootstrap.min.js'%>
+      <!-- APPEAR JS  -->
+      <%= javascript_include_tag 'jquery.appear.js'%>
+      <!-- WAYPOINTS -->
+      <%= javascript_include_tag 'waypoints.min.js'%>
+      <!-- CUSTOM JS -->
+      <%= javascript_include_tag 'jquery.counterup.min.js'%>
+      <!-- ISOTOPE -->
+      <%= javascript_include_tag 'isotope.pkgd.min.js'%>
+      <!-- PRETTY PHOTO -->
+      <%= javascript_include_tag 'jquery.prettyPhoto.js'%>
+      <!-- OWL CAROSEL -->
+      <%= javascript_include_tag 'owl.carousel.min.js'%>
+      <!-- WOW JS -->
+      <%= javascript_include_tag 'wow.min.js'%>
+      <!-- CUSTOM JS -->
+      <%= javascript_include_tag 'custom.js'%>
+
   </body>
 </html>
