@@ -3,7 +3,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="title-section white-title">
-                            <h1>GET I<span>N T</span> OUCH</h1>
+                            <h1>SOME<span> DET</span>AILS</h1>
                         </div>
                     </div>
                     <div class="row">
@@ -32,47 +32,31 @@
                             </div>
                         </div><!-- END OF / COLUMN -->
                         <div class="col-md-6 wow fadeInRight animated" data-wow-delay="0.2s">
-                            <form id="contact-form" action="inc/contact.php" name="contactform" method="post" class="contact-form">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <input type="text" name="name" id="name" class="form-control" placeholder="Your Name"/>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <input type="text" name="email" id="email" class="form-control" placeholder="Your Email"/>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <input type="text" name="subject" id="subject" class="form-control" placeholder="Your Subject"/>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <input type="text" name="website" id="website" class="form-control" placeholder="Website URL"/>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <textarea name="comments" id="comments" cols="30" rows="10" class="form-control" placeholder="Your Message"></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <span class="pori-btn">
-                                            <input type="submit" class="submit-btn" id="submit" value="SEND" />
-                                        </span>
-                                    </div>
-                                </div>
-                            </form><!-- END OF /. FORM -->
-                            <div id="message"></div>
+
+                            <div class="contact-btn">
+                                <%= link_to 'PORTFOLIO', portfolio_path %>
+                            </div>
+                            <BR>
+                            <div class="contact-btn">
+                                <%= link_to 'CONTACTS', contacts_path %>
+                            </div>
+                            <BR>
+                            <div class="contact-btn">
+                                <%= link_to 'ABOUT', about_path %>
+                            </div>
+                            <BR>
+                            <div class="contact-btn">
+                                <%= link_to 'VACANSY', vacansy_path %>
+                            </div>
+                            <BR>
+                            <div class="contact-btn">
+                                <%= link_to 'EVENTS', events_path %>
+                            </div>
+                            <BR>
+                            <div class="contact-btn">
+                                <%= link_to 'BLOG', blog_path %>
+                            </div>
+
                         </div><!-- END OF /. COLUMN -->
                     </div><!-- END OF /. ROW -->
                 </div><!-- END OF /. CONTAINER -->

@@ -46,6 +46,15 @@
    1. GENERAL SECTION
  ====================== */
 
+
+/*-- map section --*/
+.map iframe.googlemaps {
+    width:100%;
+    height:400px;
+}
+/*-- /map section --*/
+ 
+
 * {
   margin: 0;
   padding: 0px;
@@ -3241,6 +3250,11 @@ span.pori-btn {
 }
 
 @media (max-width: 420px) {
+  
+  .map iframe.googlemaps {
+   width: 100%;
+   height: 250px;
+  }
   /* TITLE SECTION */
   .title-section > h1 {
     font-size: 25px;

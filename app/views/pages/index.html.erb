@@ -1,25 +1,38 @@
-<% if user_signed_in? %>
-    <span>Здравствуйте, <%= current_user.email %></span>
-    <%= link_to 'Выйти', destroy_user_session_path, :method => :delete %>
-<% else %>
-    <%= link_to 'Войти', new_user_session_path %> или <%= link_to 'Зарегистрироваться', new_user_registration_path %>
-<% end %>
 
 <%= render 'parts/preloader' %> 
+
 <%= render 'parts/header_top' %>
+
 <%= render 'parts/header' %>
+
 <%= render 'parts/slider' %>
+
 <%= render 'parts/about' %>
+
 <%= render 'parts/why' %>
+
 <%= render 'parts/service' %>
+
 <%= render 'parts/portfolio' %>
+
 <%= render 'parts/testmonials' %>
+
 <%= render 'parts/work' %>
+
 <%= render 'parts/recent_work' %>
-<%= render 'parts/contact' %>
+
+<%= render 'calls/call' %>
+
 <%= render 'parts/team' %>
+
 <%= render 'parts/facts' %>
+
 <%= render 'parts/client' %>
+
+<%= render 'parts/price' %>
+
 <%= render 'parts/blog' %>
+
 <%= render 'parts/write_us' %>
+
 <%= render 'parts/footer' %>

@@ -1,3 +1,40 @@
-<h1>Pages#about</h1>
-<p>Find me in app/views/pages/about.html.erb</p>
+ <%= render 'parts/preloader' %> 
+ <%= render 'parts/header_top' %>
+ <%= render 'parts/header_not_main' %>
 
+            <!-- START TITLE SECTION -->
+            <section class="section blog-title-section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="title-contnet">
+                                <h2>ABOUT US</h2>
+                                <ol class="breadcrumb">
+                                  <li><%= link_to 'HOME', root_path %></li>
+                                  <li class="active">ABOUT</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- START BLOG CONTAINER SECTION -->
+            <section class="section blog-container blog-post">
+                <div class="container">
+                    <div class="row">
+                        
+                          <%= render 'parts/work' %>
+                          <%= render 'parts/team' %>
+                          <%= render 'parts/client' %>
+                          <%= render 'parts/testmonials' %>
+                          <%= render 'parts/recent_work' %>
+
+                        <!-- END OF BLOG CONTENT -->
+
+                    </div><!-- END OF /. ROW -->
+                </div><!-- END /. CONTAINER -->
+            </section><!-- END OF /. BLOG CONTAINRE -->
+
+<%= render 'parts/write_us' %>
+<%= render 'parts/footer' %>
