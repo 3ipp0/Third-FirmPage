@@ -18,8 +18,11 @@ Rails.application.routes.draw do
   get 'index.html' => 'pages#index'
   get "index" => 'pages#index'
 
-  patch '' => 'calls#create', :as => :new_call
-  patch '' => 'calls#new', :as => :calls
+  post '' => 'calls#create', :as => :new_call
+  post '' => 'calls#new', :as => :calls
+
+  post '' => 'emails#create', :as => :new_email
+  post '' => 'emails#new', :as => :emails
 
   resources :posts
 

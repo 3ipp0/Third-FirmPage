@@ -3,7 +3,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="title-section white-title">
-                            <h1>SOME<span> DET</span>AILS</h1>
+                            <h1>GET I<span>N T</span> OUCH</h1>
                         </div>
                     </div>
                     <div class="row">
@@ -32,31 +32,56 @@
                             </div>
                         </div><!-- END OF / COLUMN -->
                         <div class="col-md-6 wow fadeInRight animated" data-wow-delay="0.2s">
+                            
+                            <%= form_for @email,:url => url_for(:controller => 'emails', :action => 'create'), method: :post, "class" => "contact-form", remote: true do |f| %>
 
-                            <div class="contact-btn">
-                                <%= link_to 'PORTFOLIO', portfolio_path %>
-                            </div>
-                            <BR>
-                            <div class="contact-btn">
-                                <%= link_to 'CONTACTS', contacts_path %>
-                            </div>
-                            <BR>
-                            <div class="contact-btn">
-                                <%= link_to 'ABOUT', about_path %>
-                            </div>
-                            <BR>
-                            <div class="contact-btn">
-                                <%= link_to 'VACANSY', vacansy_path %>
-                            </div>
-                            <BR>
-                            <div class="contact-btn">
-                                <%= link_to 'EVENTS', events_path %>
-                            </div>
-                            <BR>
-                            <div class="contact-btn">
-                                <%= link_to 'BLOG', blog_path %>
-                            </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <%= f.label :name %><BR>
+                                            <%= f.text_field :name %>
+                                        </div>
+                                    </div>
 
+                                  <div class="col-md-6">
+                                        <div class="form-group">
+                                            <%= f.label :email %><BR>
+                                            <%= f.text_field :email %>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <%= f.label :subject %><BR>
+                                            <%= f.text_field :subject %>
+                                        </div>
+                                    </div>
+
+                                  <div class="col-md-6">
+                                        <div class="form-group">
+                                            <%= f.label :website %><BR>
+                                            <%= f.text_field :website %>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <%= f.label "Addictional information" %><BR>
+                                            <%= f.text_area :comment %>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                  <div class="actions">
+                                    <%= f.submit %>
+                                  </div>
+                            <% end %>
+
+                            <div id="message"></div>
                         </div><!-- END OF /. COLUMN -->
                     </div><!-- END OF /. ROW -->
                 </div><!-- END OF /. CONTAINER -->

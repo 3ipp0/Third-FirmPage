@@ -6,8 +6,9 @@ class CallsController < ApplicationController
   end
   
   def create
-  	@call = Call.create(params[:call])
-
+  	@call = Call.create(call_params)
+    UserMailer.request_call(@call).deliver_later
+    
     respond_to do |format|
       format.html { redirect_to root_path, flash[:success] = "You succsesfully update your account!" }
       format.js 

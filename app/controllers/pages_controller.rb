@@ -2,6 +2,7 @@ class PagesController < ApplicationController
 
   def index
     @call = Call.new(params[:id])
+    @email = Email.new(params[:id])
   end
 
   def about
@@ -9,6 +10,7 @@ class PagesController < ApplicationController
 
   def portfolio
     @call = Call.new(params[:id])
+
   end
   
   def contacts

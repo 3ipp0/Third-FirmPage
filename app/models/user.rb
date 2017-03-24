@@ -9,8 +9,7 @@ class User < ApplicationRecord
     validates_attachment_size :resume, :less_than => 5.megabytes
 	has_and_belongs_to_many :few_days_meetings
 
-  phony_normalize :phone_number, default_country_code: 'UA'
-  phony_normalize :phone_number, as: :phone_number_normalized_version, default_country_code: 'UA'
+  validates :phone_number, phone: true
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable

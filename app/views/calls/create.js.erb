@@ -1,2 +1,13 @@
+
+<% if @call.errors.any? %>
+	
+
+	<% @call.errors.full_messages.each do |msg| %>
+			alert("<%= msg %>");
+        <% end %>
+
+
+<% else %>
 $('#blog-w3ls3').modal('hide');
 $('#call-ok').modal();
+<% end %>

@@ -6,6 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 gem 'phony_rails'
+gem 'phonelib'
 
 gem "simple_calendar"
 
