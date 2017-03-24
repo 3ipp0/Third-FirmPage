@@ -1,18 +1,18 @@
-<%= form_for @call,:url => url_for(:controller => 'calls', :action => 'create'), method: :post, remote: true do |f| %>
+<%= form_for @call,:url => url_for(:controller => 'calls', :action => 'create'), method: :post, remote: true, class: "contact-form" do |f| %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :full_name %><BR>
-    <%= f.text_field :full_name %>
+    <%= f.text_field :full_name, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :phone_number %><BR>
-    <%= f.text_field :phone_number %>
+    <%= f.text_field :phone_number, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label "Addictional information, if needed" %><BR>
-    <%= f.text_field :body %>
+    <%= f.text_field :body, class: 'form-control' %>
   </div>
 
   <div class="actions">

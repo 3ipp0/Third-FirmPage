@@ -3,6 +3,7 @@ class PagesController < ApplicationController
   def index
     @call = Call.new(params[:id])
     @email = Email.new(params[:id])
+    @few_days_meetings = FewDaysMeeting.all
   end
 
   def about
@@ -19,6 +20,7 @@ class PagesController < ApplicationController
 
   def vacansy
     @call = Call.new(params[:id])
+    @email = Email.new(params[:id])
   end
 
   def events

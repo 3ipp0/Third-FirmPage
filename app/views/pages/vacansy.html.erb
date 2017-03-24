@@ -1,2 +1,39 @@
-<h1>Pages#vacansy</h1>
-<p>Find me in app/views/pages/vacansy.html.erb</p>
+ <%= render 'parts/preloader' %> 
+ <%= render 'parts/header_top' %>
+ <%= render 'parts/header_not_main' %>
+
+            <!-- START TITLE SECTION -->
+            <section class="section blog-title-section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="title-contnet">
+                                <h2>VACANSY</h2>
+                                <ol class="breadcrumb">
+                                  <li><%= link_to 'HOME', root_path %></li>
+                                  <li class="active">VACANSY</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- START BLOG CONTAINER SECTION -->
+            <section class="section blog-container blog-post">
+                <div class="container">
+                    <div class="row">
+                        
+                          
+                          <%= render 'parts/service' %>
+                          <%= render 'parts/why' %>
+                          <%= render 'calls/call' %>
+                          <%= render 'parts/write_us' %>
+
+                        <!-- END OF BLOG CONTENT -->
+
+                    </div><!-- END OF /. ROW -->
+                </div><!-- END /. CONTAINER -->
+            </section><!-- END OF /. BLOG CONTAINRE -->
+
+<%= render 'parts/footer' %>

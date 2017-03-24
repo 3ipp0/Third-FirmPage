@@ -1,6 +1,3 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Few Days Meetings</h1>
 
 <table>
   <thead>
@@ -16,16 +13,12 @@
     <% @few_days_meetings.each do |few_days_meeting| %>
       <tr>
         <td><%= few_days_meeting.name %></td>
-        <td><%= few_days_meeting.start_time %></td>
-        <td><%= few_days_meeting.end_time %></td>
-        <td><%= link_to 'Show', few_days_meeting %></td>
-        <td><%= link_to 'Edit', edit_few_days_meeting_path(few_days_meeting) %></td>
-        <td><%= link_to 'Destroy', few_days_meeting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= few_days_meeting.start_time.strftime("%A, %d %B %Y at %H:%M") %></td>
+        <td><%= few_days_meeting.end_time.strftime("%A, %d %B %Y at %H:%M") %></td>
+        <td><%= link_to 'Details of event', few_days_meeting %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Few Days Meeting', new_few_days_meeting_path %>

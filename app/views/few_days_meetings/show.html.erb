@@ -1,33 +1,96 @@
-<p id="notice"><%= notice %></p>
+        <%= render 'parts/preloader' %> 
+        <%= render 'parts/header_top' %>
+        <%= render 'parts/header_not_main' %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @few_days_meeting.name %>
-</p>
+            <!-- START TITLE SECTION -->
+            <section class="section blog-title-section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="title-contnet">
+                                <h2><%= @few_days_meeting.name %></h2>
+                                <ol class="breadcrumb">
+                                  <li><%= link_to 'HOME', root_path %></li>
+                                  <li class="active">EVENT</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-<p>
-  <strong>Description:</strong>
-  <%= @few_days_meeting.description %>
-</p>
+            <!-- START BLOG CONTAINER SECTION -->
+            <section class="section blog-container blog-post">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="blog-item blog-post-item">
+                                        <div class="thumb">
+                                            <div class="blog-meta row">
+                                                <div class="col-md-5">
+                                                    <h2>START AT: <%= @few_days_meeting.start_time.strftime("%d %B %y at %H:%M") %></h2>
+                                                    <span>END TIME:</span>
+                                                    <span><%= @few_days_meeting.end_time.strftime("%A, %d %B %Y at %H:%M") %></span>
+                                                </div>
+                                                <div class="col-md-7">
+                                                    <h2><%= @few_days_meeting.name %></h2>
+                                                    <p> <b>Views</b> 257</p>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="blog-contnet">
+                                            	<h3>Description:	</h3>
+                                                <p><%= @few_days_meeting.description %></p>
+                                            </div>
+                                            <center><% if user_signed_in? %>
+												<%= link_to 'Follow This Event', follow_path(@few_days_meeting), class: "btn btn-info" %>
+											<% else %>
+												<%= link_to 'Login', new_user_session_path, class: "btn btn-info" %> or <%= link_to 'Register', new_user_registration_path, class: "btn btn-info" %>
+											<% end %>
+											</center>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- END OF /. BLOG ITME -->
 
-<p>
-  <strong>Start time:</strong>
-  <%= @few_days_meeting.start_time %>
-</p>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="author-profile">
+                                        <div class="col-md-3">
+                                            <div class="author-profile-pic">
+                                                <a href="#">
+                                                	<%= image_tag("author.png", size: "200x200", alt: "") %>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div class="profile-content">
+                                                <h4>Vlad Zippo</h4>
+                                                <i>EVENTS MAKER</i>
+                                                <p>Dolorem laudantium possimus esse tenetur voluptates nam. corrupti pariatur commodi est omnis excepturi dignissimos. commodi qui cum tempora ipsa porro quasi quis labore ea cum quod sapiente debitis asperiores. ut qui est ipsa enim numquam odit mollitia. velit earum unde qui animi quod earum repellendus facere aperiam nemo. ipsa praesentium aut quam aperiam qui voluptate</p>
+                                            </div>
+                                            <div class="footer-social-media">
+                                                <ul>
+                                                    <li><a href="https://fb.com/watazippo"><i class="fa fa-facebook"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                                    <li><a href="https://github.com/3ipp0"><i class="fa fa-github"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-codepen"></i></a></li>
+                                                </ul>
+                                            </div><!-- END OF /. SOCIAL MEDIA -->
+                                        </div>
+                                    </div>
+                                </div>
 
-<p>
-  <strong>End time:</strong>
-  <%= @few_days_meeting.end_time %>
-</p>
+                            </div>
 
-<% if user_signed_in? %>
+                        </div><!-- END OF BLOG CONTENT -->
 
-<%= link_to 'Follow', follow_path(@few_days_meeting) %>
+                    </div><!-- END OF /. ROW -->
+                </div><!-- END /. CONTAINER -->
+            </section><!-- END OF /. BLOG CONTAINRE -->
 
-<% else %>
-<%= link_to 'Login', new_user_session_path %> or <%= link_to 'Register', new_user_registration_path %>
-<% end %>
-
-<BR>
-<%= link_to 'Edit', edit_few_days_meeting_path(@few_days_meeting) %> |
-<%= link_to 'Back', few_days_meetings_path %>
+<%= render 'parts/footer' %>

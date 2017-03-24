@@ -1,43 +1,83 @@
-<%= form_for @user, :url => update_path(@user), html: {multipart: true}  do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this User from being saved:</h2>
+ <%= render 'parts/preloader' %> 
+ <%= render 'parts/header_top' %>
+ <%= render 'parts/header_not_main' %>
 
-      <ul>
+            <!-- START TITLE SECTION -->
+            <section class="section blog-title-section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="title-contnet">
+                                <h2>APPLY FORM</h2>
+                                <ol class="breadcrumb">
+                                  <li><%= link_to 'HOME', root_path %></li>
+                                  <li class="active">APPLY EVENT</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-        <% @user.errors.full_messages.each do |msg| %>
-        <div class="alert alert-danger"><%= msg %></div>
-        <% end %>
+            <!-- START BLOG CONTAINER SECTION -->
+            <section class="section blog-container blog-post">
+                <div class="container">
+                    <div class="row">
+                        
+                          <%= form_for @user, :url => update_path(@user), html: {multipart: true}  do |f| %>
+                              <% if @user.errors.any? %>
+                                <div id="error_explanation">
+                                  <h2><%= pluralize(@user.errors.count, "error") %> prohibited this User from being saved:</h2>
 
-      </ul>
-    </div>
-  <% end %>
+                                  <ul>
 
-<%= current_user.first_name %>
+                                    <% @user.errors.full_messages.each do |msg| %>
+                                    <div class="alert alert-danger"><%= msg %></div>
+                                    <% end %>
 
-  <div class="field">
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name %>
-  </div>
+                                  </ul>
+                                </div>
+                              <% end %>
 
-  <div class="field">
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name %>
-  </div>
+                              <div class="field">
+                                <%= f.label :first_name %><BR>
+                                <%= f.text_field :first_name %>
+                              </div>
 
-  <div class="field">
-    <%= f.label :phone_number %>
-    <%= f.text_field :phone_number %>
-  </div>
+                              <div class="field">
+                                <%= f.label :last_name %><BR>
+                                <%= f.text_field :last_name %>
+                              </div>
 
-<%= f.file_field :resume %>
+                              <div class="field">
+                                <%= f.label :phone_number %><BR>
+                                <%= f.text_field :phone_number %>
+                              </div>
 
-  <div class="field">
-    <%= f.label :some_text %>
-    <%= f.text_field :some_text %>
-  </div>
+                            <%= f.label "Add resume if you have it:" %><BR>
+                            <%= f.file_field :resume %>
+                            <BR>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+                              <div class="field">
+                                <%= f.label "Type something here if you haven't resume or addictional info:" %><BR>
+                                <%= f.text_field :some_text %>
+                              </div>
+
+                              <div class="actions">
+                                <%= f.submit %>
+                              </div>
+                          <% end %>
+                          
+
+                        <!-- END OF BLOG CONTENT -->
+
+                    </div><!-- END OF /. ROW -->
+                </div><!-- END /. CONTAINER -->
+            </section><!-- END OF /. BLOG CONTAINRE -->
+
+<%= render 'parts/footer' %>
+
+
+
+
+
