@@ -1,23 +1,5 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
-  </head>
-  <body>
-    <h1>Someone write in contact form</h1>
-    <p>
-      ITS NAME
-      ITS EMAIL
-      ITS SUBJECT
-      ITS WEB-SITE
-      ITS COMMENT
-
-      <br>
-    </p>
-    <p>
-      To login to the site, just follow this link: .
-    </p>
-    <p>Thanks for joining and have a great day!</p>
-  </body>
-
-</html>
+Someone with name - <%= @call.name %><BR>
+And leave this email - <%= @call.email %><BR>
+Type about - <%= @call.subject %> <BR>
+Its website - <%= @call.website %> <BR>
+Text of message - <%= @call.comment %>

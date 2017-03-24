@@ -4,19 +4,12 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Someone write in contact form</h1>
-    <p>
-      ITS NAME
-      ITS EMAIL
-      ITS SUBJECT
-      ITS WEB-SITE
-      ITS COMMENT
-
-      <br>
-    </p>
-    <p>
-      To login to the site, just follow this link: .
-    </p>
+    
+    <h1>Someone write in REQUEST CALL FORM</h1>
+    <p>Someone with name - <%= @call.full_name %></p><BR>
+    <p>And leave this phone - <%= @call.phone_number %></p><BR>
+    <p>Text of message - <%= @call.body %></p><br>
+    
     <p>Thanks for joining and have a great day!</p>
   </body>
 

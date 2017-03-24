@@ -4,6 +4,19 @@ Rails.application.configure do
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+  address: "mail.smtp2go.com",
+  port: 2525, # 8025, 587 and 25 can also be used.
+  domain: "yourdomain.com",
+  authentication: "plain",
+  enable_starttls_auto: true,
+  user_name: "dzinko23@yandex.ua",
+  password: "weXXNBNc5WPh"
+  }
+
+
   config.cache_classes = false
 
   # Do not eager load code on boot.

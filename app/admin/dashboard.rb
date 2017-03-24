@@ -29,5 +29,18 @@ ActiveAdmin.register_page "Dashboard" do
     #     end
     #   end
     # end
-  end # content
+   end # content
+
+  # columns do
+  #     column do
+  #       panel "Total No. of Contacts" do
+  #         ol do
+  #           Call.all.map do |call|
+  #             li (call.full_name)
+  #           end
+  #         end
+  #       end
+  #     end
+  # end
+
 end

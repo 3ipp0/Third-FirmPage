@@ -33,7 +33,7 @@
                         </div><!-- END OF / COLUMN -->
                         <div class="col-md-6 wow fadeInRight animated" data-wow-delay="0.2s">
                             
-                            <%= form_for @email,:url => url_for(:controller => 'emails', :action => 'create'), method: :post, "class" => "contact-form", remote: true do |f| %>
+                            <%= form_for @email, :url => url_for(:controller => 'emails', :action => 'create'), method: :post, remote: true do |f| %>
 
                                 <div class="row">
                                     <div class="col-md-6">
@@ -59,7 +59,7 @@
                                         </div>
                                     </div>
 
-                                  <div class="col-md-6">
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <%= f.label :website %><BR>
                                             <%= f.text_field :website %>
