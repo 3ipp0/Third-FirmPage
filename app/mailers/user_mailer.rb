@@ -12,9 +12,9 @@ class UserMailer < ApplicationMailer
     mail(to: @@admin_email, subject: 'Someone want call!')
   end
 
-  def apply_event(user, event)
+  def apply_event(user, few_days_meetings_users)
     @user = user
-    @event = event
+    @few_days_meetings_users = few_days_meetings_users
     mail(to: @@admin_email, subject: 'Someone want apply to event!')
   end
 

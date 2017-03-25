@@ -19,7 +19,7 @@ class UsersController < ApplicationController
      	  respond_to do |format|
 		      if @user.save
 		        # Tell the UserMailer to send a welcome email after save
-		        UserMailer.apply_event(@user, @few_days_meeting).deliver_now
+		        UserMailer.apply_event(@user, @few_days_meetings_users).deliver_now
 		 
 		        format.html { redirect_to(root_path, notice: 'You adder your apply for this event. We call you!') }
 		        format.json { render json: @user, status: :created, location: @user }
