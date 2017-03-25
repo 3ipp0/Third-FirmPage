@@ -29,8 +29,23 @@
                     
                     <div class="col-lg-6 col-md-6 col-sm-12">
                         
-                        <%= render 'calls/errors' %>
-                        <%= render 'calls/form' %>
+
+                        
+                        <% if user_signed_in? %>
+                                   <p>
+                                     <%= render 'calls/form' %>
+                                   </p>
+                                <% else %>
+                                <center>
+                                  <p>
+                                    <%= link_to 'Login', new_user_session_path, class: "btn btn-info" %>
+                                  </p> 
+                                   <p>OR</p>
+                                  <p> 
+                                   <%= link_to 'Register', new_user_registration_path, class: "btn btn-info" %>
+                                  </p>
+                                </center>
+                                <% end %>
                         
                     </div>
                     

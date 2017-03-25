@@ -4,10 +4,11 @@ class PagesController < ApplicationController
     @call = Call.new(params[:id])
     @email = Email.new(params[:id])
     @few_days_meetings = FewDaysMeeting.all
+    @posts = Post.last(3).reverse
   end
 
   def about
-    
+    @email = Email.new(params[:id])
   end
 
   def portfolio
@@ -17,6 +18,7 @@ class PagesController < ApplicationController
   
   def contacts
     @call = Call.new(params[:id])
+    @email = Email.new(params[:id])
   end
 
   def vacansy

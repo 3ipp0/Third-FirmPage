@@ -4,12 +4,18 @@ class UserMailer < ApplicationMailer
  
   def contact_email(email)
     @email = email
-    mail(to: @@admin_email, subject: 'Someone write something in contact form')
+    mail(to: @@admin_email, subject: 'Someone write something in contact form!')
   end
 	
   def request_call(call)
     @call = call
-    mail(to: @@admin_email, subject: 'Someone want call')
+    mail(to: @@admin_email, subject: 'Someone want call!')
+  end
+
+  def apply_event(user, event)
+    @user = user
+    @event = event
+    mail(to: @@admin_email, subject: 'Someone want apply to event!')
   end
 
 end

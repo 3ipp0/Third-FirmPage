@@ -13,10 +13,9 @@ permit_params :title, :body, :photo, :photo_file_name, :photo_content_type
 # end
 
   index do
-    column :id
   	column :title
   	column :body
-	column 'Image', sortable: :photo_file_name do |post| link_to post.photo_file_name, post.photo.url end
+	  column 'Image', sortable: :photo_file_name do |post| link_to post.photo_file_name, post.photo.url end
   	# column :photo_file_name
   	column :created_at
   	column :updated_at
@@ -28,7 +27,7 @@ permit_params :title, :body, :photo, :photo_file_name, :photo_content_type
 	  f.input :title
 	  f.input :body
 	end
-   	  f.inputs "Upload photo" do
+   	  f.inputs "Upload photo for post" do
         f.input :photo, required: true, as: :file
    	  end
     f.actions

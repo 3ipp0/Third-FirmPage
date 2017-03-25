@@ -1,29 +1,68 @@
-<h2>Sign up</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+ <%= render 'parts/preloader' %> 
+ <%= render 'parts/header_top' %>
+ <%= render 'parts/header_not_main' %>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+            <!-- START TITLE SECTION -->
+            <section class="section blog-title-section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="title-contnet">
+                                <h2>REGISTRATION</h2>
+                                <ol class="breadcrumb">
+                                  <li><%= link_to 'HOME', root_path %></li>
+                                  <li class="active">REGISTRATION</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+            <!-- START BLOG CONTAINER SECTION -->
+            <section class="section blog-container blog-post">
+                <div class="container">
+                    <div class="row">
+                        
+                          <center>
+                            <h1>Sign up</h1>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+                            <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                              <%= devise_error_messages! %>
 
-<%= render "devise/shared/links" %>
+                              <div class="field">
+                                <%= f.label :email %><br />
+                                <%= f.email_field :email, autofocus: true %>
+                              </div>
+
+                              <div class="field">
+                                <%= f.label :password %>
+                                <% if @minimum_password_length %>
+                                <em>(<%= @minimum_password_length %> characters minimum)</em>
+                                <% end %><br />
+                                <%= f.password_field :password, autocomplete: "off" %>
+                              </div>
+
+                              <div class="field">
+                                <%= f.label :password_confirmation %><br />
+                                <%= f.password_field :password_confirmation, autocomplete: "off" %>
+                              </div>
+                                
+                              <div class="actions">
+                                <%= f.submit "Sign up" %>
+                              </div>
+                            <% end %>
+
+                          
+                            <%= render "devise/shared/links" %>
+                          </center>
+
+                        <!-- END OF BLOG CONTENT -->
+
+                    </div><!-- END OF /. ROW -->
+                </div><!-- END /. CONTAINER -->
+            </section><!-- END OF /. BLOG CONTAINRE -->
+
+<%= render 'parts/footer' %>

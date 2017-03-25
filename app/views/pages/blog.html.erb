@@ -1,4 +1,4 @@
-        <%= render 'parts/preloader' %> 
+
         <%= render 'parts/header_top' %>
         <%= render 'parts/header_not_main' %>
 
@@ -44,7 +44,7 @@
                                                    <% else %>
                                                     <center><p>No description available!</p><BR>...<BR></center>
                                                    <% end %></p>
-                                                <a <%= link_to "Read more", post_path(post), :class => 'pori-btn' %></a>
+                                                <%= link_to "Read more", post_path(post), :class => 'pori-btn' %>
                                             </div>
                                         </div>
                                     </div>
@@ -52,26 +52,8 @@
                             </div>
 
                             <% end %>
+                            <!-- END OF /. BLOG ITME -->
 
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="blog-item">
-                                        <div class="thumb">
-                                            <a href="#"><img src="images/blog/blog4.jpg" class="img-responsive" width="825" height="383" alt=""></a>
-                                            <div class="blog-meta">
-                                                <h2>25</h2>
-                                                <span>Nov</span>
-                                                <p><b>Posted by</b> Dallilu, <b>In</b> blog category app, <b>Comments</b> 15, <b>Views</b> 1510</p>
-                                            </div>
-                                            <div class="blog-contnet">
-                                                <h3>Donec iaculis metus vitae ligula elementum</h3>
-                                                <p>Proin nulla dolor, porta id vestibulum nec, tempus id purus. In viverra commodo tellus, vitae iaculis dui rutrum eu. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer dictum volutpat massa, pulvinar feugiat libero euismod semper. Aenean placerat, ipsum in fringilla facilisis, arcu est vehicula ipsum, a dictum risus tellus mattis sem. Nunc id laoreet metus. Donec cursus augue urna, rhoncus ultrices ante feugiat eget nascetur ridiculus mus libero euismod semper.</p>
-                                                <a href="#" class="pori-btn">Read More</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!-- END OF /. BLOG ITME -->
                             <div class="row">
                                 <div class="col-md-12">
                                     <nav>
@@ -101,5 +83,4 @@
                 </div><!-- END /. CONTAINER -->
             </section><!-- END OF /. BLOG CONTAINRE -->
 
-<%= render 'parts/write_us' %>
 <%= render 'parts/footer' %>

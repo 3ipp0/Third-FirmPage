@@ -8,12 +8,25 @@ class FewDaysMeetingsController < InheritedResources::Base
     end
 
     def follow
-    	@few_days_meeting = FewDaysMeeting.find(params[:id])
-        @user = current_user
-        current_user.follow_few_days_meeting!(@few_days_meeting)
-        respond_to do |format|
+        unless already_start?
+    	   @few_days_meeting = FewDaysMeeting.find(params[:id])
+            @user = current_user
+            current_user.follow_few_days_meeting!(@few_days_meeting)
+            respond_to do |format|
             format.html {render 'follow_form'}
             format.js
+            end
+        else
+            redirect_to(events_path, notice: 'This event is already started. Choose another one!')
+        end
+    end
+
+    def already_start?
+        @few_days_meeting = FewDaysMeeting.find(params[:id])
+        if @few_days_meeting.start_time < Date.today
+            return true
+        else
+            return false
         end
     end
 

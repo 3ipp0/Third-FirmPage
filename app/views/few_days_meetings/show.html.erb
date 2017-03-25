@@ -29,17 +29,17 @@
                                     <div class="blog-item blog-post-item">
                                         <div class="thumb">
                                             <div class="blog-meta row">
-                                                <div class="col-md-5">
+                                                <div class="col-md-4">
                                                     <h2>START AT: <%= @few_days_meeting.start_time.strftime("%d %B %y at %H:%M") %></h2>
                                                     <span>END TIME:</span>
                                                     <span><%= @few_days_meeting.end_time.strftime("%A, %d %B %Y at %H:%M") %></span>
                                                 </div>
-                                                <div class="col-md-7">
+                                                <div class="col-md-8">
                                                     <h2><%= @few_days_meeting.name %></h2>
                                                     <p> <b>Views</b> 257</p>
                                                 </div>
                                             </div>
-                                            
+                                            <a href="#"><%= image_tag @few_days_meeting.photo.url(:medium) %></a>
                                             <div class="blog-contnet">
                                             	<h3>Description:	</h3>
                                                 <p><%= @few_days_meeting.description %></p>

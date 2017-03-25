@@ -1,5 +1,5 @@
 class EmailsController < ApplicationController
-  
+  skip_before_action :verify_authenticity_token
 
   def new
   	@email = Email.new
@@ -25,7 +25,7 @@ class EmailsController < ApplicationController
    private
 
    def email_params
-  	params.require(:email).permit(:name, :email, :subjet, :website, :comment)
+  	params.require(:email).permit(:name, :email, :subject, :website, :comment)
    end
 
 end

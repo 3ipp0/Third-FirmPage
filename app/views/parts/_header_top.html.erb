@@ -1,14 +1,29 @@
 <!-- START HEADER TOP SECTION -->
             <div class="section header-top-section" id="top">
-                <div class="container">
+                <div class="container" style="height: 50px">
                     <div class="row">
-                        <div class="col-sm-6">
+                        <div class="col-sm-7">
                             <div class="contact-info">
                                 <p><i class="pe-7s-call"></i> COMPANY'S NUMBER</p>
                                 <p><i class="pe-7s-mail"></i> COMPANY'S EMAIL</p>
-                            </div>
+                                
+                                <% if user_signed_in? %>
+                                   <p>
+                                     <%= link_to :Logout, destroy_user_session_path, :method => :delete, class: "btn btn-info"  %>
+                                   </p>
+                                <% else %>
+                                  <p>
+                                     <%= link_to 'Login', new_user_session_path, class: "btn btn-info" %>
+                                  </p> 
+                                   <p>OR</p>
+                                  <p>
+                                   <%= link_to 'Register', new_user_registration_path, class: "btn btn-info" %>
+                                  </p>
+                                <% end %>
+
+                            </div><span class="btn btn-label-default">
                         </div><!-- END OF /. COL -->
-                        <div class="col-sm-6">
+                        <div class="col-sm-5">
                             <div class="social-media">
                                 <ul>
                                     <li><a href="#"><i class="fa fa-facebook"></i></a></li>
